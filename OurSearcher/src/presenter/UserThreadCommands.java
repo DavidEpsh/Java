@@ -11,7 +11,7 @@ public class UserThreadCommands {
 	
 	public UserThreadCommands(){
 		tCommands.put("IsAlive", new checkThreadCommand());
-		tCommands.put("StillAlive", new checkStillAliveCommand());
+		tCommands.put("AreAlive", new checkAreAliveCommand());
 	}
 	
 	public boolean cheackIfCommandExist(String args){
@@ -36,7 +36,7 @@ public class UserThreadCommands {
 		
 	}
 	
-	private class checkStillAliveCommand implements Func {
+	private class checkAreAliveCommand implements Func {
 
 		@Override
 		public Boolean doCommand(int index) {
@@ -44,6 +44,4 @@ public class UserThreadCommands {
 		}
 		
 	}
-	
-	
 }

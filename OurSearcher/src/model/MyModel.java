@@ -50,6 +50,7 @@ public class MyModel extends Observable implements Model {
 	public void solveDomain() {	
 		String problemDescription = domain.getProblemDescription();
 		this.solution = solutionManager.getSolution(problemDescription);
+		System.out.println("Solution Exists in file");
 		
 		if (solution == null) {		
 			ArrayList<Action> actions = algorithm.search(domain);
