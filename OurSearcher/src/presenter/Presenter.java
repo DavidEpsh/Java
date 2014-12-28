@@ -80,6 +80,7 @@ public class Presenter implements Observer {
 		
 		Thread t = new Thread (new TaskRunnable(ui));
 		t.start();
+		/////ahahahahaa
 	}
 	
 }
