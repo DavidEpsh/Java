@@ -72,5 +72,4 @@ public class MyModel extends Observable implements Model {
 	public void doTask() {
 		solveDomain();
 	}
-
 }
