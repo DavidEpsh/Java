@@ -40,9 +40,10 @@ public class Presenter implements Observer {
 		if (observable instanceof Model)
 		{
 			SolutionManager.getInstance();
-			
+		
 			Solution solution = ((Model)observable).getSolution();
 			view.displaySolution(solution);
+			
 		}
 		else if (observable == view)
 		{

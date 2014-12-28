@@ -21,7 +21,8 @@ public class SolutionManager{
 	
 	public static SolutionManager getInstance() {
 		if (instance == null) {
-			instance = new SolutionManager();			
+			instance = new SolutionManager();	
+			
 		}
 		return instance;
 	}

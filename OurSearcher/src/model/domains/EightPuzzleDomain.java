@@ -88,6 +88,9 @@ public class EightPuzzleDomain implements SearchDomain {
 				}
 			}
 		}
+		if (distance == 1)
+			return true;
+		
 			return distance%2==0; 
 		}
 
