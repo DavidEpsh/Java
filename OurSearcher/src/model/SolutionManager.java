@@ -6,13 +6,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.HashMap;
 
 public class SolutionManager{
 	private HashMap<String, Solution> solutionsMap;
 	private static SolutionManager instance = null;
-	private static final String FILE_NAME = "resources/solution.dat";
+	private static final String FILE_NAME = "resources/solution.txt";
 	
 	protected SolutionManager() {
 		

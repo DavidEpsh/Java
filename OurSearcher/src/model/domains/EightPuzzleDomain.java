@@ -20,7 +20,7 @@ public class EightPuzzleDomain implements SearchDomain {
 		this.start = new EightPuzzleState();
 		this.goal = new EightPuzzleState("1,2,3,4,5,6,7,8,0");
 		
-		while(this.start.getEvaluation(goal) > 5  || !this.isSolvable(start) ) {
+		while(/*this.start.getEvaluation(goal) > 5  ||*/ !this.isSolvable(start) ) {
 			this.start = new EightPuzzleState();
 		}
 	}

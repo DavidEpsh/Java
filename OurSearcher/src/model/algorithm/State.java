@@ -1,6 +1,6 @@
 package model.algorithm;
 
-public abstract class State {
+public abstract class State implements Comparable<State>{
 	// the string representation of the state
 	
 	public Action cameWithAction;

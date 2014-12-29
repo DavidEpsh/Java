@@ -42,14 +42,14 @@ public class ThreadManager {
 		}
 		
 		@SuppressWarnings("deprecation")
-		public void killThread(int index) {
+		public void killOneThread(int index) {
 			if(threads.get(index).isAlive())
 				threads.get(index).stop();
 		}
 		
-		public void KillAllThreads() {
+		public void KillThreads() {
 			for(int i = 0 ; i < threads.size(); i++)
-				killThread(i);
+				killOneThread(i);
 		}
 		
 

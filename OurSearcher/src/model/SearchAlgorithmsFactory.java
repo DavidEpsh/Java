@@ -12,7 +12,7 @@ public class SearchAlgorithmsFactory {
 	{
 		algorithms = new HashMap<String, AlgorithmCreator>();
 		algorithms.put("BFS", new BFSCreator());
-	// 	algorithms.put("HillClimbing", new HillClimbingCreator());
+	 	algorithms.put("AStar", new AStarCreator());
 	}
 	
 	public Searcher createAlgorithm(String algorithmName)
@@ -37,14 +37,13 @@ public class SearchAlgorithmsFactory {
 			return new BFS();
 		}		
 	}
-	/*
-	private class HillClimbingCreator implements AlgorithmCreator
+	
+	private class AStarCreator implements AlgorithmCreator
 	{
 		@Override
 		public Searcher create() {
-			// TODO Auto-generated method stub
-			return new HillClimbing();
+			return new Astar();
 		}		
 	}
-	*/
+
 }

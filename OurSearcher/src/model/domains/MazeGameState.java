@@ -37,7 +37,19 @@ public class MazeGameState  extends State{
 		return (Integer.toString(this.x) + ","  + Integer.toString(this.y));
 		
 	}
+
+	@Override
+	public int compareTo(State o) {
+		return pitagoras(this)- pitagoras((MazeGameState)(o))   ;
+	}
+	public int pitagoras(MazeGameState x)
+	{
+			return pitagoras(getX(), getY());
+	}
 	
+	public int pitagoras(int x , int y){	
+		return x*x+y*y;
+	}
 	
 	
 

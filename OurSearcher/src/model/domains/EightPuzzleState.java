@@ -1,5 +1,6 @@
 package model.domains;
 
+import model.MyModel;
 import model.algorithm.*;
 
 public class EightPuzzleState extends State {
@@ -42,6 +43,9 @@ public class EightPuzzleState extends State {
 	
 	@Override
 	public int getEvaluation(State goal) {
+		if(goal == null)
+			goal = new EightPuzzleState("1,2,3,4,5,6,7,8,0");
+		
 		EightPuzzleState goalState = (EightPuzzleState) goal;
 			int distance=0,tempInt;
 			
@@ -138,6 +142,13 @@ public class EightPuzzleState extends State {
 			newState.setPoint(newX,newY,temp);
 			
 			return ""+newState.toString();
+	}
+
+	@Override
+	public int compareTo(State o) {
+		 
+		 return this.getEvaluation(null) - o.getEvaluation(null);
+
 	}
 	
 	

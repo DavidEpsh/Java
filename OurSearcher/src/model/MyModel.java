@@ -5,6 +5,8 @@ import java.util.Observable;
 
 import tasks.Task;
 import model.algorithm.Action;
+import model.algorithm.Astar;
+import model.algorithm.H_functions;
 import model.algorithm.SearchDomain;
 import model.algorithm.Searcher;
 import model.domains.*;
@@ -13,13 +15,16 @@ public class MyModel extends Observable implements Model {
 	
 	private SearchDomain domain;
 	private Searcher algorithm;
+	private H_functions heuristic;
 	private SearchAlgorithmsFactory algorithmsFactory;
+	private HeuristicFactory heurisitecFactory;
 	private Solution solution;
 	private SolutionManager solutionManager;
 	
 	public MyModel()
 	{
 		algorithmsFactory = new SearchAlgorithmsFactory();
+		heurisitecFactory = new HeuristicFactory();
 		solutionManager = SolutionManager.getInstance();
 	}
 
@@ -44,6 +49,12 @@ public class MyModel extends Observable implements Model {
 	@Override
 	public void selectAlgorithm(String algorithmName) {
 		algorithm = algorithmsFactory.createAlgorithm(algorithmName);
+	}
+	
+	public void selectHeuristic(String heuristicName){
+		heuristic = heurisitecFactory.createHeuristic(heuristicName);
+		if (algorithm.getClass() == Astar.class)
+			((Astar)algorithm).setHeuristic(heuristic);
 	}
 
 	@Override

@@ -11,6 +11,8 @@ public interface Model extends Task {
 	
 	void selectAlgorithm(String algorithmName);
 	
+	void selectHeuristic(String heuristicName);
+	
 	void solveDomain();
 	
 	Solution getSolution();

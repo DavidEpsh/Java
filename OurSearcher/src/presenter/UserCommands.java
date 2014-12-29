@@ -14,6 +14,7 @@ public class UserCommands {
 	{
 		commands.put("SD", new SelectDomainCommand());
 		commands.put("SA", new SelectAlgorithmCommand());
+		commands.put("SH", new SelectHeuristicCommand());
 		commands.put("SolveDomain", new SolveDomainCommand());
 		commands.put("SIT", new SolveDomainInThread());
 	}
@@ -82,6 +83,14 @@ public class UserCommands {
 		
 	}
 	
+	private class SelectHeuristicCommand implements Command
+	{
+		@Override
+		public Model doCommand(Model model, String args) {
+			model.selectHeuristic(args);	
+			return model;
+		}		
+	}
 	
 	
 	

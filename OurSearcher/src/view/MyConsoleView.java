@@ -12,10 +12,15 @@ public class MyConsoleView extends Observable implements View {
 
 	private String action;
 	
-	@Override
+@Override
 	public void start() {
+	
+		
+		
 		System.out.println("Welcome to my project \nto create random maze input should be: SelectDomain Maze:5,5,10 (default: without :5,5,10) \n"
-				+ "to create random 8puzzle, input should be: SelectDomain 8puzzle (user puzzle: SelectDomain 8puzzle:1,2,3,4,5,6,7,8,0)");
+				+ "to create random 8puzzle, input should be: SelectDomain 8puzzle (user puzzle: SelectDomain 8puzzle:1,2,3,4,5,6,7,8,0)\n\n"
+				+ "Command Shortcuts : SelectDomain = SD , SelectAlgorithm = SA \n"
+				+ "SelectHeuristic = SH , SolveInThread = SIT ");
 		this.action = "";
 		Scanner scanner = new Scanner(System.in);
 		do
@@ -31,6 +36,7 @@ public class MyConsoleView extends Observable implements View {
 			else
 			{
 				SolutionManager.getInstance().saveSolutionsInFile();
+				ThreadManager.getInstance().KillThreads();
 			}
 		} while (!(this.action.equals("exit")));
 		
